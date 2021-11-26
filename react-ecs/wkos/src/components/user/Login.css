@@ -1,0 +1,67 @@
+.login {
+  width: 360px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.imgbtn {
+  margin-top: 15%;
+  margin-left: 15px;
+}
+
+.logoimg {
+  height: 50px;
+}
+
+.login-type {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.login-type h1 {
+  font-size: 44px;
+  text-align: center;
+  font-weight: normal;
+}
+
+a.btn {
+  display: block;
+  text-decoration: none;
+  color: gray;
+  border: 1px solid lightgray;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+a.btn:hover {
+  opacity: 1;
+}
+
+a.btn2 {
+  text-decoration: none;
+  color: black !important;
+  background-color: rgb(255, 255, 255);
+}
+
+a.btn3 {
+  text-decoration: none;
+  color: white !important;
+  background-color: rgb(43, 151, 43);
+}
+
+a.btn4 {
+  text-decoration: none;
+  color: black !important;
+  background-color: rgb(255, 233, 0);
+}
+
+a.btn5 {
+  text-decoration: none;
+  color: white !important;
+  background-color: rgb(66, 103, 178);
+}

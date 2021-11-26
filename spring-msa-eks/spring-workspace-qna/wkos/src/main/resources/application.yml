@@ -1,0 +1,61 @@
+# Application Port Setting
+server:
+  port: 8082
+
+spring:
+  # MariaDB Connection Setting
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    #    url: jdbc:mariadb://52.78.197.7:3307/wkos?serverTimezone=UTC&characterEncoding=UTF-8
+    #    username: fbaa4412
+    #    password: qkfka124@
+    url: jdbc:mariadb://whatsports-db.c4ldb2t3cfqd.ap-northeast-2.rds.amazonaws.com:3306/Project?serverTimezone=UTC
+    username: fbaa4412
+    password: qkfka124
+
+  # Enable Live Reload
+  devtools:
+    livereload:
+      enabled: true
+
+  jpa:
+#    properties:
+#      hibernate:
+#       Printing executed queries to the console
+#              show_sql: true
+#       Formatting queries print to the console with good readability
+#            format_sql: true
+
+    hibernate:
+      ddl-auto: update
+    #      ddl-auto: create
+
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+# Print a bind parameter that is print as a question mark in the query
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace;
+
+# cors 설정
+cors:
+  allowed-origins: 'https://whatsports.site'
+  allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+  allowed-headers: '*'
+  max-age: 3600
+
+# jwt secret key 설정
+jwt.secret: '8sknjlO3NPTBqo319DHLNqsQAfRJEdKsETOds'
+
+---
+
+aws:
+  dynamodb:
+    endpoint: https://dynamodb.ap-northeast-2.amazonaws.com
+    accessKey: AKIAYWWWZSBOLGYF7RRA
+    secretKey: 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
+  region: ap-northeast-2

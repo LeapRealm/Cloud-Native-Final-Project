@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  facility:
+    container_name: wkos-spring-user
+    image: leaprealm/wkos-spring-user:latest
+    ports:
+      - 80:80

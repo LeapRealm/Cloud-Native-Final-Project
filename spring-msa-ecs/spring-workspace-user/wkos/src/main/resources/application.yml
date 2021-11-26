@@ -1,0 +1,100 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://DB_URL
+    username: username
+    password: password
+
+  devtools:
+    livereload:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace;
+---
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 'clientId'
+            clientSecret: 'clientSecret'
+            scope:
+              - email
+              - profile
+          facebook:
+            clientId: 'clientId'
+            clientSecret: 'clientSecret'
+            scope:
+              - email
+              - public_profile
+          naver:
+            clientId: 'clientId'
+            clientSecret: 'clientSecret'
+            clientAuthenticationMethod: post
+            authorizationGrantType: authorization_code
+            redirectUri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
+            scope:
+              - name
+              - email
+              - profile_image
+            clientName: Naver
+          kakao:
+            clientId: 'clientId'
+            clientSecret: 'clientSecret'
+            clientAuthenticationMethod: POST
+            authorizationGrantType: authorization_code
+            redirectUri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
+            scope:
+              - profile_nickname
+              - profile_image
+              - account_email
+            clientName: kakao
+
+        provider:
+          naver:
+            authorizationUri: https://nid.naver.com/oauth2.0/authorize
+            tokenUri: https://nid.naver.com/oauth2.0/token
+            userInfoUri: https://openapi.naver.com/v1/nid/me
+            userNameAttribute: response
+          kakao:
+            authorizationUri: https://kauth.kakao.com/oauth/authorize
+            tokenUri: https://kauth.kakao.com/oauth/token
+            userInfoUri: https://kapi.kakao.com/v2/user/me
+            userNameAttribute: id
+
+cors:
+  allowed-origins: 'https://whatsports.site'
+  allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+  allowed-headers: '*'
+  max-age: 3600
+
+jwt.secret: 'jwt_secret_key'
+
+app:
+  auth:
+    tokenSecret: tokenSecret
+    tokenExpiry: 17280000000
+    refreshTokenExpiry: 60480000000
+  oauth2:
+    authorizedRedirectUris: 'https://whatsports.site/oauth/redirect'
+
+server:
+  tomcat:
+    remoteip:
+      remote-ip-header: x-forwared-for
+      protocol-header: x-forwarded-proto

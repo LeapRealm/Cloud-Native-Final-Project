@@ -1,0 +1,22 @@
+.detailContainer {
+  margin-top: 1%;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.detailWrapper {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.detail {
+  display: inline-block;
+}
+
+.detailTable {
+  text-align: left;
+  display: inline-block;
+  padding-left: 30px;
+}
