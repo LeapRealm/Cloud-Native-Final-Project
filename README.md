@@ -10,7 +10,7 @@
 - HTML / CSS / React JSX
 - Java / Spring Boot
 - Docker / Docker Compose / Kubernetes
-- AWS MariaDB RDS / DynamoDB / EKS / ECS / EC2 / Route 53 / API Gateway / Load Balancer
+- AWS MariaDB RDS / DynamoDB / EKS / ECS / Route 53 / API Gateway / Load Balancer
 
 [사용 툴]
 - WebStorm
